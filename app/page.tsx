@@ -24,7 +24,7 @@ export default function Home() {
   const [accuracy, setAccuracy] = useState(100);
   const [roomId, setRoomId] = useState('');
   const [inputRoomId, setInputRoomId] = useState('');
-  const [isHost, setIsHost] = useState(false);
+  const [_isHost, setIsHost] = useState(false); // 방 생성자 여부 확인 (나중에 추가)
   const [opponentProgress, setOpponentProgress] = useState({ cpm: 0, wpm: 0, accuracy: 100 });
   const [timeLeft, setTimeLeft] = useState(30);
   const [wordCount, setWordCount] = useState(0);
@@ -82,7 +82,10 @@ export default function Home() {
   }, []);
 
   const createRoom = () => {
-    // const newRoomId = Math.random().toString(36).substring(7);
+    if (!inputRoomId.trim()) {
+      alert('방 ID를 입력해주세요!');
+      return;
+    }
     const newRoomId = inputRoomId;
     setRoomId(newRoomId);
     setIsHost(true);
