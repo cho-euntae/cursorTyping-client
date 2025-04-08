@@ -53,7 +53,7 @@ export default function Home() {
     //   path: '/api/socket',
     //   addTrailingSlash: false,
     // });
-    socketRef.current = io('http://localhost:4000');
+    socketRef.current = io(`${process.env.NEXT_PUBLIC_SOCKET_URL}:${process.env.NEXT_PUBLIC_BACKEND_PORT}`);
 
     socketRef.current.on('connect', () => {
       console.log('Connected to server');
@@ -82,10 +82,14 @@ export default function Home() {
   }, []);
 
   const createRoom = () => {
-    const newRoomId = Math.random().toString(36).substring(7);
-    socketRef.current?.emit('createRoom', newRoomId);
+    // const newRoomId = Math.random().toString(36).substring(7);
+    const newRoomId = inputRoomId;
     setRoomId(newRoomId);
     setIsHost(true);
+    console.log(`createRoom: ${roomId}, socket.id: ${socketRef.current?.id}`);
+
+    socketRef.current?.emit('createRoom', newRoomId);
+    socketRef.current?.emit('joinRoom', newRoomId);
 
     // 방 생성 시 새로운 랜덤 텍스트 선택
     getTexts().then((text) => setText(text));
