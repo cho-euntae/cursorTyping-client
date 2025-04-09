@@ -47,9 +47,27 @@ export default function Home() {
     }
   }
 
+  // useEffect(() => {
+  //   socketRef.current = io(process.env.NEXT_PUBLIC_SOCKET_URL ?? '', {
+  //     path: '/socket.io', // socket 서버의 path가 다르다면 이걸 맞춰야 함
+  //     transports: ['websocket'], // polling 방지
+  //   });
+
+  //   socketRef.current.on('connect', () => {
+  //     console.log('Connected to server');
+  //   });
+
+  //   return () => {
+  //     socketRef.current?.disconnect();
+  //   };
+  // }, []);
+
   useEffect(() => {
     // Socket.IO 연결
-    socketRef.current = io(`${process.env.NEXT_PUBLIC_SOCKET_URL}:${process.env.NEXT_PUBLIC_BACKEND_PORT}`);
+    socketRef.current = io(process.env.NEXT_PUBLIC_SOCKET_URL ?? '', {
+      path: '/socket.io', // socket 서버의 path가 다르다면 이걸 맞춰야 함
+      transports: ['websocket'], // polling 방지
+    });
 
     socketRef.current.on('connect', () => {
       console.log('Connected to server');
