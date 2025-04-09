@@ -49,10 +49,6 @@ export default function Home() {
 
   useEffect(() => {
     // Socket.IO 연결
-    // socketRef.current = io({
-    //   path: '/api/socket',
-    //   addTrailingSlash: false,
-    // });
     socketRef.current = io(`${process.env.NEXT_PUBLIC_SOCKET_URL}:${process.env.NEXT_PUBLIC_BACKEND_PORT}`);
 
     socketRef.current.on('connect', () => {
