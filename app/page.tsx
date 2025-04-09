@@ -63,11 +63,16 @@ export default function Home() {
   // }, []);
 
   useEffect(() => {
-    console.log('SOCKET URL:', process.env.NEXT_PUBLIC_SOCKET_URL);
+    const socketURL = process.env.NEXT_PUBLIC_SOCKET_URL;
+    console.log('SOCKET URL:', socketURL);
+    if (!socketURL) {
+      throw new Error('Socket URL이 정의되지 않았습니다!');
+    }
+
     // Socket.IO 연결
-    socketRef.current = io(process.env.NEXT_PUBLIC_SOCKET_URL ?? '', {
-      path: '/socket.io', // socket 서버의 path가 다르다면 이걸 맞춰야 함
-      transports: ['websocket'], // polling 방지
+    socketRef.current = io(socketURL, {
+      path: '/socket.io',
+      transports: ['websocket'],
     });
 
     socketRef.current.on('connect', () => {
