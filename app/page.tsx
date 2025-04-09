@@ -63,6 +63,7 @@ export default function Home() {
   // }, []);
 
   useEffect(() => {
+    console.log('SOCKET URL:', process.env.NEXT_PUBLIC_SOCKET_URL);
     // Socket.IO 연결
     socketRef.current = io(process.env.NEXT_PUBLIC_SOCKET_URL ?? '', {
       path: '/socket.io', // socket 서버의 path가 다르다면 이걸 맞춰야 함
