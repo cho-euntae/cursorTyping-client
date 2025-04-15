@@ -2,7 +2,6 @@ import React from 'react';
 import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '../globals.css';
-import { AppContextProvider } from '@/context/AppContext';
 import ClientProvider from './ClientProvider';
 
 const geistSans = localFont({
