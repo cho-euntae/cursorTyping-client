@@ -5,7 +5,7 @@ import { useState, useEffect, useRef } from 'react';
 import { io } from 'socket.io-client';
 import Image from 'next/image';
 const koreanSentences = [
-  '오늘은 날씨가 참 좋네요.',
+  '오늘은 날씨가 참 좋네요...',
   '나는 매일 아침 커피를 마십니다.',
   '고양이는 창밖을 바라보고 있어요.',
   '프론트엔드 개발은 재미있지만 가끔 헷갈려요.',
