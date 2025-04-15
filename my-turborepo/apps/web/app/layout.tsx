@@ -3,6 +3,7 @@ import type { Metadata } from 'next';
 import localFont from 'next/font/local';
 import '../globals.css';
 import { AppContextProvider } from '@/context/AppContext';
+import ClientProvider from './ClientProvider';
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -20,15 +21,11 @@ export const metadata: Metadata = {
   description: 'Typing Game',
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang='en'>
+    <html lang='ko'>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-        <AppContextProvider>{children}</AppContextProvider>
+        <ClientProvider>{children}</ClientProvider>
       </body>
     </html>
   );
