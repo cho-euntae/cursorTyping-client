@@ -1,24 +1,37 @@
 {
   "name": "my-turborepo",
+  "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
   "scripts": {
-    "build": "turbo run build",
     "dev": "turbo run dev",
+    "build": "turbo run build",
+    "start": "turbo run start",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "check-types": "turbo run check-types"
+    "format": "prettier --write \"**/*.{ts,tsx,md,json}\""
   },
   "devDependencies": {
-    "prettier": "^3.5.3",
-    "turbo": "^2.5.0",
-    "typescript": "5.8.2"
+    "@eslint/eslintrc": "^3.0.0",
+    "@tailwindcss/postcss": "^4.1.4",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "^8.56.0",
+    "eslint-config-next": "15.3.0",
+    "eslint-config-prettier": "^9.0.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.0.0",
+    "tailwindcss": "^4.1.4",
+    "turbo": "latest"
   },
-  "engines": {
-    "node": ">=18"
-  },
-  "packageManager": "npm@10.9.2",
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ]
+  "packageManager": "npm@10.2.4",
+  "dependencies": {
+    "@next/env": "^15.3.0",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "scheduler": "^0.26.0",
+    "styled-jsx": "^5.1.6"
+  }
 }
