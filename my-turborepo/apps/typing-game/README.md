@@ -1,3 +1,9 @@
+## vercel 에서 빌드시
+
+## Root 패키지를 참조하지 못하여
+
+## 해당 프로젝트에도 같이 라이브러리를 설치를 해줘야됨.
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started

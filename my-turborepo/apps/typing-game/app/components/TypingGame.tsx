@@ -12,7 +12,7 @@ export function TypingGame() {
 
   return (
     <div className='w-full max-w-2xl space-y-8'>
-      <h1 className='text-4xl font-bold text-center text-gray-800'>타이핑 연습</h1>
+      {/* <h1 className='text-4xl font-bold text-center text-gray-800'>타이핑 연습</h1> */}
 
       <div className='flex justify-center space-x-8'>
         <div className='text-center'>
