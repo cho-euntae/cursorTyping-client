@@ -10,7 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'TypeMaster - 타자 연습',
+  // title: 'TypeMaster - 타자 연습',
+  title: 'test11',
   description: '타자 연습을 통해 타이핑 실력을 향상시켜보세요',
 };
 

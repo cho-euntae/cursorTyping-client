@@ -22,10 +22,11 @@ export function ChatRoom() {
   const socketRef = useRef<any>(null);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const roomId = 'public'; // 기본 공개 채팅방
-
+  const socketUrl = process.env.NEXT_PUBLIC_SOCKET_URL || 'http://localhost:4000';
   // 소켓 연결
   useEffect(() => {
-    socketRef.current = io('http://localhost:4000');
+    // socketRef.current = io('http://localhost:4000');
+    socketRef.current = io(socketUrl);
 
     // 방 참여
     socketRef.current.emit('joinRoom', roomId);

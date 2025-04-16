@@ -4,7 +4,7 @@ export default function Home() {
   return (
     <main className='h-[calc(100vh-64px)] bg-gray-100'>
       {/* 히어로 섹션 */}
-      <section className='h-1/3 bg-white flex items-center'>
+      <section className='h-1/6 bg-white flex items-center'>
         <div className='max-w-7xl mx-auto px-4'>
           <div className='text-center'>
             <h1 className='text-4xl font-bold text-gray-900 mb-4'>타이핑 실력을 향상시켜보세요</h1>
@@ -14,8 +14,8 @@ export default function Home() {
       </section>
 
       {/* 타이핑 게임 섹션 */}
-      <section className='h-2/3 flex items-center'>
-        <div className='max-w-7xl mx-auto px-4 flex justify-center'>
+      <section className='h-5/6 flex items-center'>
+        <div className='w-full mx-auto px-4 flex justify-center'>
           <TypingGame />
         </div>
       </section>
